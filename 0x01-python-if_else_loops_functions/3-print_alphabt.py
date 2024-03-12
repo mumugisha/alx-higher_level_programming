@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-for i in range(0, 20):
-    print("{} = 0x{:x}".format(i, i))
+for alphabet in range(ord('a'), ord('{')):
+     alphabet = chr(alphabet)
+     if letter not in "qe"
+value = ord(alphabet)
+	print("{:c}".format(value, end="")
