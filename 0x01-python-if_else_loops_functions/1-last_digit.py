@@ -6,7 +6,7 @@ if number < 0:
 else:
     last_digit_number = number % 10
 if last_digit_number > 5:
-    print("Last digit number of {:d} is {:d} and is greater than 2"
+    print("Last digit number of {:d} is {:d} and is greater than 5"
           .format(number, last_digit_number))
 elif last_digit_number < 6 and last_digit_number != 0:
     print("Last digit number of {:d} is {:d} and is less than 6 and not 0"
