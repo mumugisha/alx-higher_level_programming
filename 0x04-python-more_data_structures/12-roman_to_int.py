@@ -12,4 +12,4 @@ def roman_to_int(roman_string):
         else:
             total += digits[roman_string[i]]
 
-            return total
+    return total
