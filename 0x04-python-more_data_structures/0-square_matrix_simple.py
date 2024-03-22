@@ -3,8 +3,8 @@
 def square_matrix_simple(matrix=[]):
     man = []
 
-    for i in matrix:
-        y = list(map(lambda x: x * x, i))
+    for y in matrix:
+        y = list(map(lambda x: x * x, y))
         man.append(y)
     
     return man
