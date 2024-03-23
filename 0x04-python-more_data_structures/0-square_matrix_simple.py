@@ -1,6 +1,4 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    squared = []
-    for row in matrix:
-        squared.append([c**2 for c in row])
+    squared = [[c**2 for c in row] for row in matrix]
     return squared
