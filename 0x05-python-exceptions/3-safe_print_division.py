@@ -7,4 +7,4 @@ def safe_print_division(a, b):
         pass
     finally:
         print("inside result: {}".format(sand))
-        return sand
+    return sand
