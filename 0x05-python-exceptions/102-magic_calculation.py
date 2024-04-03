@@ -10,5 +10,4 @@ def magic_calculation(a, b):
                 sand += (a ** b) / u
     except ValueError:
         sand = b + a
-
     return sand
