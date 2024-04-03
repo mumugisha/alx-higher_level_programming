@@ -5,10 +5,10 @@ def magic_calculation(a, b):
     try:
         for u in range(1, 3):
             if u > 1:
-                raise Exception('big up')
+                raise ValueError('big up')
             else:
                 sand += (a ** b) / u
-    except Exception:
+    except ValueError:
         sand = b + a
-    
+
     return sand
