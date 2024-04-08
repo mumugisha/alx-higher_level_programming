@@ -5,7 +5,7 @@ class Rectangle:
     """ This is a rectangle class"""
 
     def __init__(self, width=0, height=0):
-        """Initialize new group Rectable.
+        """ Initialize new group Rectable.
 
         Args:
             width (int): Width arguments of rectangle.
@@ -21,7 +21,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Width attributes set"""
+        """ Width attributes set"""
         if not isinstance(value, int):
             raise TypeError("width is an integer")
         if value < 0:
@@ -30,12 +30,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """Make a class of rectangle Height attributes."""
+        """ Make a class of rectangle Height attributes."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Height attributes set"""
+        """ Height attributes set"""
         if not isinstance(value, int):
             raise TypeError("height is an integer")
         if value < 0:
