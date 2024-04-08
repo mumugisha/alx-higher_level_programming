@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" I define Rectangle class."""
+"""I define Rectangle class."""
 
 class Rectangle:
     """This is a rectangle class"""
