@@ -6,10 +6,13 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ Initialize new group Rectable.
-
+        
         Args:
             width (int): Width arguments of rectangle.
             height (int): Height arguments of rectangle.
+        raises:
+            TypeError: if size is not integer
+            ValueError: if size is less than zero
         """
         self.width = width
         self.height = height
