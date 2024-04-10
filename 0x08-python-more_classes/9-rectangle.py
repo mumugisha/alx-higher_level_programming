@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Define this Rectangle class."""
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
@@ -7,7 +7,7 @@ class Rectangle:
 
     Attributes:
         number_of_instances (int): The number of Rectangle instance.
-        print_symbol (any): The symbol be used for string representation.
+        print_symbol (any): The symbol used for string representation.
     """
 
     number_of_instances = 0
@@ -18,7 +18,7 @@ class Rectangle:
 
         Args:
             width (int): The width of new rectangle.
-            height (int): The height of new rectangle.
+            height (int): The height of the rectangle.
         """
         type(self).number_of_instances += 1
         self.width = width
@@ -26,7 +26,7 @@ class Rectangle:
 
     @property
     def width(self):
-        """Set width of Rectangle."""
+        """set the width of Rectangle."""
         return self.__width
 
     @width.setter
@@ -39,7 +39,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Set the height of the Rectangle."""
+        """set the height of the Rectangle."""
         return self.__height
 
     @height.setter
@@ -62,7 +62,7 @@ class Rectangle:
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
-        """Return Rectangle with greatest area.
+        """Return Rectangle of the greatest area.
 
         Args:
             rect_1 (Rectangle): The first Rectangle.
@@ -80,7 +80,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """Return new Rectangle of width and height equal to the size.
+        """Return the new Rectangle with width and height equal to size.
 
         Args:
             size (int): The width and height of new Rectangle.
@@ -90,7 +90,7 @@ class Rectangle:
     def __str__(self):
         """Return printable representation of Rectangle.
 
-        Represent the rectangle with the # character.
+        Represent rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -103,12 +103,12 @@ class Rectangle:
         return ("".join(rect))
 
     def __repr__(self):
-        """Return the string that represent Rectangle."""
+        """Return string that represent the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
 
     def __del__(self):
-        """Print a message for every deleted Rectangle."""
+        """Print message on deleted Rectangle."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
