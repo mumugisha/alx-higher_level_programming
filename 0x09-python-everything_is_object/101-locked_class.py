@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""I define Locked Class"""
+"""I define Locked Class."""
 
 class LockedClass:
     """do not initiate another lockedClass, but only 'first_name'.
