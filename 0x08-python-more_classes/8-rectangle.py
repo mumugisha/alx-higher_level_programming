@@ -81,7 +81,7 @@ class Rectangle:
     def __str__(self):
         """Return printed representation of Rectangle class.
 
-        Represent rectangle class with a character.
+        Represent rectangle class with a # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
