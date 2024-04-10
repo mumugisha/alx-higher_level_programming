@@ -8,8 +8,8 @@ class Rectangle:
         """ Initialize new group Rectable.
         
         Args:
-            width (int): Width arguments of rectangle.
-            height (int): Height arguments of rectangle.
+            width (int): The Width of new rectangle.
+            height (int): The Height of new rectangle.
         raises:
             TypeError: if size is not integer
             ValueError: if size is less than zero
