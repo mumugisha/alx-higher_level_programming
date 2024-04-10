@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Define this Rectangle class."""
 
-
 class Rectangle:
     """Represent a rectangle.
 
@@ -90,7 +89,7 @@ class Rectangle:
     def __str__(self):
         """Return printable representation of Rectangle.
 
-        Represent the rectangle with # character.
+        Represent the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
             return ("")
