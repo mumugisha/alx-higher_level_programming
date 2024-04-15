@@ -2,5 +2,8 @@
 """Define basegeometry."""
 
 class BaseGeometry:
-    """Represent an empty geometry class."""
-    pass
+    """Represent a base geometry class."""
+    
+    def area(self):
+        """Method to compute area."""
+        raise Exception("area() is not implemented.")
