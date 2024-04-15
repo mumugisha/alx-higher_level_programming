@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Define class that checks other function."""
 
-
 def is_same_class(obj, v_class):
     """Check if object is exactly an instance of certain class.
     Args:
