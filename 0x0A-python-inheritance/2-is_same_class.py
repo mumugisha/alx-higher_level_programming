@@ -10,5 +10,3 @@ def is_same_class(obj, v_class):
         True if obj is exactly an instance of v_class, otherwise False.
     """
     return type(obj) == type(v_class)
-        return True
-    return False
