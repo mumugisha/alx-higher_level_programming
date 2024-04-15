@@ -1,17 +1,131 @@
-#!/usr/bin/python3
-"""Define a base geometry class."""
+The 7 base geometry module
 
 class BaseGeometry:
-    """Reprsent base geometry class."""
-
-    def area(self):
-        """raise an exceptional class."""
-        raise Exception("area() is not implemented")
-
     def integer_validator(self, name, value):
-        """Validates an attribeute as an integer.
-        Args:
-            name (str): The name of parameter.
-            value (int): The parameter to validate.
-        Raises:
-            TypeError: If value is not an integer
+        # Check if the value is an integer
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        # Check if the integer value is greater than 0
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
+
+
+if __name__ == "__main__":
+    # Create an instance of BaseGeometry
+    bg = BaseGeometry()
+
+    # Test cases for integer_validator method
+    try:
+        bg.integer_validator("name", "John")  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("age", 0)  # Expecting ValueError
+    except ValueError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("distance", -4)  # Expecting ValueError
+    except ValueError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("valid", 1)  # No exception expected
+    except (TypeError, ValueError) as e:
+        print(e)
+
+    try:
+        bg.integer_validator()  # Missing arguments, expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator(1)  # Missing argument, expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator(1, 2, 3)  # Too many arguments, expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.area()  # Not implemented, expecting Exception
+    except Exception as e:
+        print(e)
+
+    try:
+        bg.integer_validator("float", 4.5)  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("bool", True)  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("list", [1, 2, 3])  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("list", [])  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("float", float('NaN'))  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("float", float('inf'))  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("valid", 1000213)  # No exception expected
+    except (TypeError, ValueError) as e:
+        print(e)
+
+    try:
+        bg.integer_validator("abebe")  # Missing argument, expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("tuple", (1,))  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("tuple", (1, 2))  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("dict", {})  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("dict", {"a": 1})  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("dict", {"a": 1, "b": 1})  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("set", {1, 2, 3})  # Expecting TypeError
+    except TypeError as e:
+        print(e)
+
+    try:
+        bg.integer_validator("none", None)  # Expecting TypeError
+    except TypeError as e:
+        print(e)
