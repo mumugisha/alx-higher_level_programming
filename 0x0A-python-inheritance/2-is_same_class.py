@@ -4,9 +4,12 @@
 def is_same_class(obj, v_class):
     """Check if object is exactly an instance of certain class.
     Args:
-        obj: object that needs checking.
-        v_class: A class to match the type of obj to.
+        obj: object that need checking.
+        v_class: A class to match a type of obj to define.
     Returns:
-        True if obj is exactly an instance of v_class, otherwise False.
+        If obj is exactly an instance of v_class - True.
+        Otherwise - False.
     """
-    return type(obj) == type(v_class)
+    if type(obj) == v_class:
+        return True
+    return False
