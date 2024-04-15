@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+"""Define a base geometry class."""
+
+class BaseGeometry:
+    """Reprsent base geometry class."""
+
+    def area(self):
+        """raise an exceptional class."""
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """Validates an attribeute as an integer.
+        Args:
+            name (str): The name of parameter.
+            value (int): The parameter to validate.
+        Raises:
+            TypeError: If value is not an integer
