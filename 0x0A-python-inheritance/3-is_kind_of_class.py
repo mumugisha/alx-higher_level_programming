@@ -2,14 +2,15 @@
 """Define a class and inherited class-checking function."""
 
 
-def is_same_class(obj, a_class):
-    """Check if an object is inherited instance of a class.
+def is_kind_of_class(obj, a_class):
+    """Check if an object is an instance or inherited instance of a class.
+
     Args:
         obj (any): object to check.
-        a_class (type): class to match a type of obj to.
+        a_class (type): class to match the type of obj to.
+
     Returns:
-        If obj is instance or inherits instance of this a_class - True.
-        Otherwise - False.
+        bool: True if obj is an instance or inherits instance of a_class, otherwise False.
     """
     if isinstance(obj, a_class):
         return True
