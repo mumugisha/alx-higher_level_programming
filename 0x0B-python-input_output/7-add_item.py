@@ -13,6 +13,7 @@ if __name__ == "__main__":
     try:
         content = load_from_json_file("add_item.json")
     except FileNotFoundError:
-        ceontent = []
+        content = []
     content.extend(sys.argv[1:])
-    save_to_json_file(items, "add_item.json")
+    save_to_json_file(content, "add_item.json")
+
