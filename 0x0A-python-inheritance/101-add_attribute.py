@@ -1,4 +1,7 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
+
+def add_attribute(obj, attribute, value):
+    setattr(obj, attribute, value)
 
 """Define a function that and adds attribute."""
 
