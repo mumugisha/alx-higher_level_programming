@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
@@ -12,5 +14,9 @@ class Rectangle:
 
 class Square(Rectangle):
     def __init__(self, side_length):
-        # Call the superclass's __init__ method with side_length as both width and height
         super().__init__(side_length, side_length)
+
+
+s = Square(13)
+print("[Square] {}/{}".format(s.width, s.height))
+print(s.area())
