@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Define a class Student by specialization."""
 
 
@@ -18,5 +17,5 @@ class Student:
         self.age = age
 
     def to_json(self):
-        """Get a dictionary representation of a class of student."""
+        """retrieves a dictionary representation of a class of student."""
         return self.
