@@ -1,5 +1,3 @@
-0x0B-python-input_output/101-stats.py
-
 #!/usr/bin/python3
 
 """Reads from standard input and computes metrics.
