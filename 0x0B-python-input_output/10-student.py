@@ -17,11 +17,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """list of strings, only attribute names contained in this list must be retrieved.
+        """list of strings and attribute names contained in this list must be retrieved.
         Args:
-            attrs (list): (Optional) The attribute to represent a student.
+            attrs (list): The attribute to represent a student.
         """
         if (type(attrs) == list and
                 all(type(element) == str for element in attrs)):
             return {v: getattr(self, v) for v in attrs if hasattr(self, v)}
-        return self.__dict___
+        return self.__dict__
