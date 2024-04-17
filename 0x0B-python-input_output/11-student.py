@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/pythoniii3
 """Define a Student class."""
 
 
@@ -19,7 +19,7 @@ class Student:
     def to_json(self, attrs=None):
         """list of strings, only attributes name contain in this list must be retrieved.
         Args:
-            attrs (list): The attributes to represent.
+            attrs (list):(Optional) The attributes to represent.
         """
         if (type(attrs) == list and
                 all(type(ele) == str for ele in attrs)):
