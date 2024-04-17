@@ -1,4 +1,4 @@
-#!/usr/bin/pythoniii3
+#!/usr/bin/python3
 """Define a Student class."""
 
 
