@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """Define a student class."""
 
 
@@ -25,4 +24,4 @@ class Student:
         if (type(attrs) == list and
                 all(type(element) == str for element in attrs)):
             return {v: getattr(self, v) for v in attrs if hasattr(self, v)}
-        return self.__dict__
+        return self.__dict___
