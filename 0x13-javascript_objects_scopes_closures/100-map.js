@@ -2,7 +2,7 @@
 /**
  * Script that imports an array from a file and computes a new array.
  * The script imports list from the file 100-data.js.
- * 
+ *
  * The new array is created with each value being the product of the
  * initial list value and its index.
  */
