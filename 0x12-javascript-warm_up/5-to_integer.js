@@ -3,4 +3,4 @@
 const { argv } = require('process');
 const num = parseInt(argv[2]);
 
-console.log(Number.isInteger(numb) ? `My number: ${num}` : 'Not a Number');
+console.log(Number.isInteger(num) ? `My number: ${num}` : 'Not a Number');
