@@ -1,9 +1,5 @@
 #!/usr/bin/node
 
-const add = (a, b) => {
-  return a + b;
-};
+const add = (a, b) => a + b;
 
-module.exports = {
-  add: add
-};
+module.exports = { add };
