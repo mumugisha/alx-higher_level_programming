@@ -5,7 +5,7 @@ function add(a, b) {
 }
 
 const { argv } = require('process');
-const abc1 = parseInt(argv[2]);
-const abc2 = parseInt(argv[3]);
+const number1 = parseInt(argv[2], 10);
+const number2 = parseInt(argv[3], 10);
 
-console.log(add(abc1, abc2));
+console.log(add(number1, number2));
