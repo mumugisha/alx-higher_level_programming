@@ -10,25 +10,27 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-    connec = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=mysql_username,
-        passwd=mysql_password,
-        db=database_name
-    )
+    try:
+        connec = MySQLdb.connect(
+            host="localhost",
+            port=3306,
+            user=mysql_username,
+            passwd=mysql_password,
+            db=database_name
+        )
 
-    curs = connec.cursor()
-    query = (
-        "SELECT * FROM states "
-        "WHERE name LIKE BINARY 'N%' "
-        "ORDER BY states.id ASC"
-    )
-    curs.execute(query)
-    
-    rows = curs.fetchall()
-    for row in rows:
-        print(row)
+        curs = connec.cursor()
+        query = ("SELECT * FROM states WHERE name LIKE BINARY 'N%' "
+                 "ORDER BY states.id ASC")
+        curs.execute(query)
 
-    curs.close()
-    connec.close()
+        rows = curs.fetchall()
+        for row in rows:
+            print(row)
+    except MySQLdb.Error as e:
+        print(f"Error: {e}")
+    finally:
+        if 'curs' in locals():
+            curs.close()
+        if 'connec' in locals():
+            connec.close()
