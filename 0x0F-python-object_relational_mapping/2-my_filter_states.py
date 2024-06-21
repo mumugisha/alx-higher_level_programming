@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""Script that takes in an argument and displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument."""
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: {} <mysql_username> <mysql_password> "
+              "<database_name> <state_name>".format(sys.argv[0]))
+        sys.exit(1)
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -21,17 +24,20 @@ if __name__ == "__main__":
         )
 
         curs = connec.cursor()
-        query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-        curs.execute(query, (state_name,))
+
+        query = ("SELECT * FROM states WHERE BINARY name = '{}' "
+                 "ORDER BY id ASC".format(state_name))
+        curs.execute(query)
 
         rows = curs.fetchall()
         for row in rows:
-            if row[1] == state_name:
-                print(row)
+            print(row)
+
     except MySQLdb.Error as e:
         print(f"Error: {e}")
+
     finally:
-        if 'curs' in locals():
+        if 'curs' in locals() and curs is not None:
             curs.close()
-        if 'connec' in locals():
+        if 'connec' in locals() and connec is not None:
             connec.close()
