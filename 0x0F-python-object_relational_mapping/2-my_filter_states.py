@@ -1,13 +1,12 @@
 #!/usr/bin/python3
+"""Script that takes in an argument and displays all values in the states table
+of hbtn_0e_0_usa where name matches the argument."""
+
 
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    if len(sys.argv) != 5:
-        print("Usage: {} <mysql_username> <mysql_password> "
-              "<database_name> <state_name>".format(sys.argv[0]))
-        sys.exit(1)
 
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
@@ -31,7 +30,8 @@ if __name__ == "__main__":
 
         rows = curs.fetchall()
         for row in rows:
-            print(row)
+            if row[1] == state_name:
+                print(row)
 
     except MySQLdb.Error as e:
         print(f"Error: {e}")
