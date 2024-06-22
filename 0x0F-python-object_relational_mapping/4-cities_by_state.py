@@ -29,8 +29,9 @@ def main():
             "ORDER BY cities.id ASC;"
         )
 
-        for row in cursor.fetchall():
-            print(f"{row[0]}: {row[1]}, {row[2]}")
+        rows = cursor.fetchall()
+        for row in rows:
+            print(f"{row[1]}, {row[2]}")
 
         cursor.close()
         db.close()
