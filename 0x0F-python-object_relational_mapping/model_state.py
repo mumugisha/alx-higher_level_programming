@@ -25,10 +25,3 @@ class State(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-
-
-DATABASE_URI = 'mysql+mysqldb://username:password@localhost:3306/database_name'
-engine = create_engine(DATABASE_URI)
-Base.metadata.create_all(engine)
-Session = sessionmaker(bind=engine)
-session = Session()
