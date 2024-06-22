@@ -9,11 +9,13 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
+
 class State(Base):
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
+
 
 def main():
     engine = create_engine('sqlite:///states.db', echo=True)
@@ -21,6 +23,7 @@ def main():
 
     Session = sessionmaker(bind=engine)
     session = Session()
+
 
 if __name__ == "__main__":
     main()
