@@ -26,8 +26,8 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    delete_states = session.query(State).filter(State.name.like('%a%'))
-    for state in delete_states:
+    state_delete = session.query(State).filter(State.name.like('%a%'))
+    for state in states_delete:
         session.delete(state)
     session.commit()
     session.close()
