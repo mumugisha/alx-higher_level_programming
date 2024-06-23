@@ -8,7 +8,7 @@ the database hbtn_0e_6_usa
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State
 
 if __name__ == "__main__":
     mysql_username = sys.argv[1]
@@ -24,9 +24,8 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    Base.metadata.create_all(engine)
 
-    state_delete = session.query(State).filter(State.name.like('%a%'))
+    states_delete = session.query(State).filter(State.name.like('%a%'))
     for state in states_delete:
         session.delete(state)
     session.commit()
