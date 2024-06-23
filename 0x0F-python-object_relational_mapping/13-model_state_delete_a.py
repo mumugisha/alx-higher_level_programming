@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""
-Script that deletes all State objects with a name
-containing the letter a from
-the database hbtn_0e_6_usa
-"""
-
-import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model_state import State
-
 if __name__ == "__main__":
+    import sys
+    from sqlalchemy import create_engine, exc
+    from sqlalchemy.orm import sessionmaker
+    from model_state import State
+
+    if len(sys.argv) != 4:
+        print("Usage: {} <mysql_username> <mysql_password> "
+              "<database_name>".format(sys.argv[0]))
+        sys.exit(1)
+
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
@@ -25,8 +24,15 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states_delete = session.query(State).filter(State.name.like('%a%'))
-    for state in states_delete:
-        session.delete(State)
-    session.commit()
-    session.close()
+    try:
+        states_delete = session.query(State)\
+                               .filter(State.name.like('%a%'))\
+                               .all()
+        for state in states_delete:
+            session.delete(state)
+        session.commit()
+    except exc.SQLAlchemyError as e:
+        print(f"An error occurred: {e}")
+        session.rollback()
+    finally:
+        session.close()
