@@ -35,4 +35,5 @@ if __name__ == "__main__":
     except MySQLdb.Error as e:
         print(f"Error {e}")
     except IndexError:
-        print("Usage: ./script.py <mysql_username> <mysql_password> <database_name>")
+        print("Usage: ./4-cities_by_state.py <mysql_username> "
+              "<mysql_password> <database_name>")
