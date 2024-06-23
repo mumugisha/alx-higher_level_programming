@@ -13,7 +13,6 @@ if __name__ == "__main__":
     mysql_password = sys.argv[2]
     database_name = sys.argv[3]
 
-
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
             mysql_username, mysql_password, database_name
