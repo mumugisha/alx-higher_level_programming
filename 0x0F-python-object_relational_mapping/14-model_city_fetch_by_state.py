@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-Python file similar to model_state.py named model_city.py 
-that contains the class definition of a City and prints all City objects
-from the database along with their corresponding State names.
+Python file similar to model_state.py named model_city.py
+that contains the class definition of a City
 """
 
 from sqlalchemy import create_engine
