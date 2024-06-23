@@ -30,5 +30,3 @@ if __name__ == "__main__":
 
     session.commit()
     session.close()
-
-    print("Deletion complete.")
