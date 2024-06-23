@@ -10,8 +10,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} <mysql_username> <mysql_password> <database_name> <state_name>"
-              .format(sys.argv[0]))
+        print("Usage: {} <mysql_username> <mysql_password> "
+              "<database_name> <state_name>".format(sys.argv[0]))
         sys.exit(1)
 
     mysql_username = sys.argv[1]
@@ -21,9 +21,7 @@ if __name__ == "__main__":
 
     engine = create_engine(
         'mysql+mysqldb://{}:{}@localhost/{}'.format(
-            mysql_username,
-            mysql_password,
-            database_name
+            mysql_username, mysql_password, database_name
         ),
         pool_pre_ping=True
     )
@@ -39,4 +37,3 @@ if __name__ == "__main__":
         print('Not found')
 
     session.close()
-
