@@ -34,7 +34,7 @@ if __name__ == "__main__":
     first = session.query(State).first()
 
     if not first:
-        print("Nothing\n")
+        print("Nothing")
     else:
         print(f"{first.id}: {first.name}")
 
