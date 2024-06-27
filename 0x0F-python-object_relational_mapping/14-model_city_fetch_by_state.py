@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Python file similar to model_state.py named model_city.py
-that contains the class definition of a City
+Prints all City objects from the database hbtn_0e_14_usa.
 """
 
 import sys
@@ -13,8 +12,8 @@ from model_city import City
 
 def main():
     if len(sys.argv) != 4:
-        print('Usage: username, password, database')
-        sys.exit()
+        print('Usage: username password database')
+        sys.exit(1)
 
     username = sys.argv[1]
     password = sys.argv[2]
@@ -28,12 +27,12 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities_query = session.query(State, City.id, City).filter(
-        City.state_id == State.id
+    cities_query = session.query(State.name, City.id, City.name).join(
+        State, City.state_id == State.id
     ).order_by(City.id).all()
 
-    for row in cities_query:
-        print(f'{row.State.name}: ({row.City.id}) {row.City.name}')
+    for state_name, city_id, city_name in cities_query:
+        print(f'{state_name}: ({city_id}) {city_name}')
 
     session.close()
 
