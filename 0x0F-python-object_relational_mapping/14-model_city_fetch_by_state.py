@@ -20,18 +20,20 @@ def main():
     database = sys.argv[3]
 
     engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost/{database}',
+        f'mysql+mysqldb://{username}:{password}@localhost:3306/{database}',
         pool_pre_ping=True
     )
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    cities_query = session.query(State.name, City.id, City.name).join(
+    cities_query = session.query(
+        City.id, City.name, State.name
+    ).join(
         State, City.state_id == State.id
     ).order_by(City.id).all()
 
-    for state_name, city_id, city_name in cities_query:
+    for city_id, city_name, state_name in cities_query:
         print(f'{state_name}: ({city_id}) {city_name}')
 
     session.close()
