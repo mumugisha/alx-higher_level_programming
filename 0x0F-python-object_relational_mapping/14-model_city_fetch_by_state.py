@@ -60,7 +60,7 @@ def main():
 
     engine = get_engine(username, password, database)
     Base.metadata.create_all(engine)
-    
+
     session = get_session(engine)
     fetch_cities(session)
     session.close()
