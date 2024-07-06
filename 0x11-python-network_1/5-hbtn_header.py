@@ -8,7 +8,9 @@ X-Request-Id in the response header.
 from requests import get
 from sys import argv
 
-
 if __name__ == "__main__":
-    response = get(argv[1])
-    print(response.headers.get("X-Request-Id"))
+    try:
+        req = get(argv[1])
+        print(req.headers.get("X-Request-Id"))
+    except Exception:
+        pass
