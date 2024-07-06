@@ -6,7 +6,7 @@ X-Request-Id in the response header.
 """
 
 from requests import get
-import sys 
+import sys
 
 if __name__ == "__main__":
     try:
