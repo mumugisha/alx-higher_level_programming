@@ -6,12 +6,8 @@ X-Request-Id in the response header.
 """
 
 from requests import get
-import sys
+from sys import argv
 
 if __name__ == "__main__":
-    try:
-        response = get(argv[1])
-        print(response.headers.get("X-Request-Id"))
-
-    except Exception:
-        pass
+    response = get(argv[1])
+    print(response.headers.get("X-Request-Id"))
