@@ -10,6 +10,10 @@ import sys
 from urllib import request, error
 
 if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print("Usage: ./script.py <URL>")
+        sys.exit(1)
+    
     url = sys.argv[1]
 
     try:
@@ -23,3 +27,4 @@ if __name__ == '__main__':
             print("URL Error: {}".format(err.reason))
         elif hasattr(err, 'code'):
             print("HTTP Error code: {}".format(err.code))
+
