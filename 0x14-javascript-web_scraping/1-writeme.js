@@ -11,6 +11,6 @@ const contentWrite = process.argv[3];
 // Write files using Js
 fs.writeFile(filePath, contentWrite, 'utf-8', (err) => {
   if (err) {
-          return console.log(err);
+	  console.log(err);
   }
 });
