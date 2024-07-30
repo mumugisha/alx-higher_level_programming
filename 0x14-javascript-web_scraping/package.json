@@ -1,0 +1,12 @@
+{
+  "name": "0x14-javascript-web_scraping",
+  "version": "1.0.0",
+  "description": "0x14. JavaScript - Web scraping",
+  "main": "0-readme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
