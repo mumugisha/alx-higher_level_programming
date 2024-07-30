@@ -6,12 +6,12 @@
 
 const fs = require('fs');
 const filePath = process.argv[2];
-const stringWrite = process.argv[3];
+const contentWrite = process.argv[3];
 
 
 // Write files using Js
-fs.writeFile(filePath, stringWrite, 'utf-8', (err) => {
-  if (error) {
-      return console.log(error);
+fs.writeFile(filePath, contentWrite, 'utf-8', (err) => {
+  if (err) {
+          return console.log(err);
   }
 });
