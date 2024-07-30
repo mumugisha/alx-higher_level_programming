@@ -12,6 +12,6 @@ request(requestUrl, (err, response) => {
 		      console.error('Error:', err);
 		      return;
 		    }
-	  console.log('code:', response.statusCode);
+	  console.log("code:", response && response.statusCode);
 });
 
