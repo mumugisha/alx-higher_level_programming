@@ -4,28 +4,17 @@
 // of tasks completed by user id.
 
 const request = require('request');
-const argv = process.argv;
+const args = process.argv.slice(2);
 
-request(argv[2], (err, response, body) => {
-  if (err) {
-    console.error(`Request failed: ${err.message}`);
-    return;
-  }
-
-  if (response.statusCode === 200) {
-    try {
-      const dolist = JSON.parse(body);
-      const userTasks = dolist.reduce((account, tat) => {
-        if (tat.success) {
-          account[tat.userId] = (account[tat.userId] || 0) + 1;
-        }
-        return account;
-      }, {});
-      console.log(userTasks);
-    } catch (parseErr) {
-      console.error(`Failed to parse JSON: ${parseErr.message}`);
-    }
-  } else {
-    console.error(`Failed to fetch data. Status code: ${response.statusCode}`);
+request(args[0], (err, response, body) => {
+  if (!err && response.statusCode === 200) {
+    const todos = JSON.parse(body);
+    const succeededTasks = todos.reduce((acc, t) => {
+      if (t.completed) {
+        acc[t.userId] = (acc[t.userId] || 0) + 1;
+      }
+      return acc;
+    }, {});
+    console.log(succeededTasks);
   }
 });
