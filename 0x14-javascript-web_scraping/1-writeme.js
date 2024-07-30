@@ -10,8 +10,8 @@ const fileWrite = process.argv[3];
 // Write files using Js
 fs.writeFile(filepath, fileWrite, { encoding: 'utf8' }, (err) => {
   if (err) {
-	  return console.error(err);
+	  return console.log(err);
   } else {
-    console.log('File written successfully');
+	  return console.log('File written successfully');
   }
 });
