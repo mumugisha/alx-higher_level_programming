@@ -4,14 +4,14 @@
 
 const fs = require('fs');
 
-const filepath = process.argv[2];
+const filePath = process.argv[2];
 const fileWrite = process.argv[3];
 
 // Write files using Js
-fs.writeFile(filepath, fileWrite, { encoding: 'utf8' }, (err) => {
+fs.writeFile(filePath, fileWrite, { encoding: 'utf8' }, (err) => {
   if (err) {
-	  return console.log(err);
+    console.log(err);
   } else {
-	  return console.log('File written successfully');
+    console.log('File written successfully');
   }
 });
