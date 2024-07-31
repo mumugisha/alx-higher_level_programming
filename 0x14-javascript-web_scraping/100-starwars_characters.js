@@ -1,32 +1,19 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 
-// Write a script that computes the number
-// of tasks completed by user id.
+// Script that prints all characters of a Star Wars movie
 
-const request = require('request');
-const { argv } = process;
-const api = 'https://swapi-api.alx-tools.com/api/films';
+const request = require('request')
+const { argv } = process
+const api = 'https://swapi-api.alx-tools.com/api'
 
-const fetchCharacterName = (characterUrl) => {
-  request(characterUrl, (err, response, body) => {
-    if (err) {
-      console.error('Error fetching character:', err);
-      return;
-    }
-    if (response.statusCode === 200) {
-      const name = JSON.parse(body).name;
-      console.log(name);
-    }
-  });
-};
-
-request(`${api}/${argv[2]}`, (err, response, body) => {
-  if (err) {
-    console.error('Error fetching film:', err);
-    return;
-  }
+request(`${api}/films/${argv[2]}`, function (_error, response, body) {
+  const characters = []
   if (response.statusCode === 200) {
-    const characters = JSON.parse(body).characters;
-    characters.forEach(fetchCharacterName);
+    characters.push(...JSON.parse(body).characters)
+    for (const character of characters) {
+      request(character, function (_error, _response, body) {
+        console.log(JSON.parse(body).name)
+      })
+    }
   }
-});
+})
